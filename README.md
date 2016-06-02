@@ -16,4 +16,12 @@ Well, 85 or so are done. To some degree of completion.
  * Didn't do much of any unit tests.
  * First few projects aaa and so on seem to be lame or not done, not sure why.
 
+### To Use As Example Projects Instead:
+
+The 80 or so of these that are near completion make decent example projects from both an isolation, and contextual perspectives. In other words they are sparse projects, that run standalone.
+
+But here are two challenges to that approach: 
+
+ * They have no index! So you'd have to scan [this (ugh) document](https://github.com/jammazwan/jammazwan.100.done/blob/master/jammazwanBatch100.txt).
+ * git clone this whole project? That's 25 meg... 
 
