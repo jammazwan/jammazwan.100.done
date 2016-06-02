@@ -1,0 +1,20 @@
+package myorg;
+
+import org.apache.camel.test.junit4.CamelTestSupport;
+import org.junit.Test;
+
+public class RoutingSlipWithProcessTest  extends CamelTestSupport 
+@Test
+public void testRoutingSlip() throws Exception {
+    // setup expectations that only A and C will receive the message
+    getMockEndpoint("mock:x").expectedMessageCount(1);
+    getMockEndpoint("mock:y").expectedMessageCount(0);
+    getMockEndpoint("mock:z").expectedMessageCount(1);
+
+    // send the incoming message
+    template.sendBody("direct:start", "big bertha");
+
+    assertMockEndpointsSatisfied();
+}{
+
+}

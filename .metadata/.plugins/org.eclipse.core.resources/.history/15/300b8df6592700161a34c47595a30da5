@@ -1,0 +1,5 @@
+package jammazwan.replace;
+
+public interface Replacement {
+
+}

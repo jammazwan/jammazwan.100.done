@@ -1,0 +1,16 @@
+package jammazwan.jive;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+
+import jammazwan.City;
+import jammazwan.jpa.CityJpa;
+
+public class CityToJPA implements Processor{
+
+	public void process(Exchange exchange) throws Exception {
+		City city = exchange.getIn().getBody(City.class);
+		CityJpa = new CityJpa(city);
+	}
+
+}

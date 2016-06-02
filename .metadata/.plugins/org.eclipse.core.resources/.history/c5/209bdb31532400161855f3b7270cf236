@@ -1,0 +1,15 @@
+package jammazwan.entity;
+
+import static org.junit.Assert.*;
+
+import org.apache.camel.test.spring.CamelSpringTestSupport;
+import org.junit.Test;
+
+public class XmplProjectTest extends CamelSpringTestSupport{
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}

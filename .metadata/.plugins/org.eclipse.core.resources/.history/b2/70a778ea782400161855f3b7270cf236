@@ -1,0 +1,12 @@
+package jammazwan;
+
+import org.apache.camel.builder.RouteBuilder;
+
+public class GenerateInitialRoute extends RouteBuilder{
+
+	@Override
+	public void configure() throws Exception {
+		
+	}
+
+}

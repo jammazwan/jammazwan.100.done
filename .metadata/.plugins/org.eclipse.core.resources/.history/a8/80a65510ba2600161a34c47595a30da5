@@ -1,0 +1,27 @@
+package jammazwan;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.camel.impl.DefaultCamelContext;
+
+import jammazwan.entity.XmplProject;
+
+public class XyzReRun {
+	UnMarshalExampleProjects unMarshalExampleProjects = new UnMarshalExampleProjects();
+
+	public static void main(String[] args) throws Exception {
+		XyzReRun xyzReRun = new XyzReRun();
+		xyzReRun.go();
+	}
+
+	private void go() throws Exception {
+		DefaultCamelContext context = new DefaultCamelContext();
+		context.addRoutes(unMarshalExampleProjects);
+		context.start();
+		Thread.sleep(5000);
+		context.stop();
+		System.gc();
+	}
+
+}

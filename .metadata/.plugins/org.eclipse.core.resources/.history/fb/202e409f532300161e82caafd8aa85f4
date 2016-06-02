@@ -1,0 +1,6 @@
+package jammazwan.raw;
+
+public class SurnamePojo {
+	String name;
+
+}

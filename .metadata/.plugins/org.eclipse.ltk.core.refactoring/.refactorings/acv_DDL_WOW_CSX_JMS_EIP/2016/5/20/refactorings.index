@@ -1,0 +1,9 @@
+1462745559417	Rename package 'example'
+1462745570097	Rename type 'ExampleBean'
+1462745586698	Rename type 'ExampleRoute'
+1462745595659	Delete element
+1462746276134	Rename package 'adv'
+1462746285420	Rename package 'adv.domain'
+1462746522135	Rename package 'example'
+1462746532121	Rename type 'ExampleTest'
+1462746774283	Rename resource 'camel-route.xml'

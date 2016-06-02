@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="de0a8b3a-4703-46a5-9aeb-f17a27f9b718" activeEnvironment="Default" name="abs" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b5883584-8699-4d6c-b20d-24e0ade66e87" wsaVersion="NONE" name="AbsServiceSoapBinding" type="wsdl" bindingName="{http://abs/}AbsServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:9000/abs/?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:9000/abs/?wsdl"><con:part><con:url>http://localhost:9000/abs/?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="AbsService" targetNamespace="http://abs/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://abs/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://abs/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://abs/">
+      <xs:complexType name="tube">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="diameter" type="xs:string"/>
+          <xs:element minOccurs="0" name="length" type="xs:string"/>
+          <xs:element minOccurs="0" name="material" type="xs:string"/>
+          <xs:element minOccurs="0" name="thickness" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="roll" type="roll"/>
+      <xs:complexType name="roll">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="arg0" type="tube"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="rollResponse" type="rollResponse"/>
+      <xs:complexType name="rollResponse">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="roll">
+    <wsdl:part element="tns:roll" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rollResponse">
+    <wsdl:part element="tns:rollResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AbsServicePortType">
+    <wsdl:operation name="roll">
+      <wsdl:input message="tns:roll" name="roll"></wsdl:input>
+      <wsdl:output message="tns:rollResponse" name="rollResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AbsServiceSoapBinding" type="tns:AbsServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="roll">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="roll">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="rollResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AbsService">
+    <wsdl:port binding="tns:AbsServiceSoapBinding" name="AbsServicePort">
+      <soap:address location="http://localhost:9000/abs/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9000/abs/</con:endpoint></con:endpoints><con:operation id="8fd36cfa-cb40-4291-a04d-54bc7e39d85d" isOneWay="false" action="" name="roll" bindingOperationName="roll" type="Request-Response" outputName="rollResponse" inputName="roll" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="b528927e-cf49-4f3c-9c57-76f68321aab8" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9000/abs/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:abs="http://abs/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <abs:roll>
+         <!--Optional:-->
+         <abs:arg0>
+            <!--Optional:-->
+            <diameter>3in</diameter>
+            <!--Optional:-->
+            <length>10feet</length>
+            <!--Optional:-->
+            <material>alluminum</material>
+            <!--Optional:-->
+            <thickness>1/8inch</thickness>
+         </abs:arg0>
+      </abs:roll>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://abs/AbsServicePortType/roll"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

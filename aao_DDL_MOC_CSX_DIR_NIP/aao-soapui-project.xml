@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="0412f1e3-edf1-4aad-9d6d-4658c19a77c5" activeEnvironment="Default" name="aao" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="0f29814b-897a-41f1-b197-3f871d63dd24" wsaVersion="NONE" name="AaoServiceServiceSoapBinding" type="wsdl" bindingName="{http://aao/}AaoServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:9000/aao/?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:9000/aao/?wsdl"><con:part><con:url>http://localhost:9000/aao/?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="AaoServiceService" targetNamespace="http://aao/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://aao/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://aao/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="fixes" type="tns:fixes"/>
+      <xs:element name="fixesResponse" type="tns:fixesResponse"/>
+      <xs:complexType name="fixes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:duck"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="duck">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="bill" type="xs:string"/>
+          <xs:element minOccurs="0" name="color" type="xs:string"/>
+          <xs:element minOccurs="0" name="feet" type="xs:string"/>
+          <xs:element minOccurs="0" name="walk" type="xs:string"/>
+          <xs:element minOccurs="0" name="wingspan" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fixesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="fixes">
+    <wsdl:part element="tns:fixes" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="fixesResponse">
+    <wsdl:part element="tns:fixesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AaoService">
+    <wsdl:operation name="fixes">
+      <wsdl:input message="tns:fixes" name="fixes"></wsdl:input>
+      <wsdl:output message="tns:fixesResponse" name="fixesResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AaoServiceServiceSoapBinding" type="tns:AaoService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="fixes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="fixes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="fixesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AaoServiceService">
+    <wsdl:port binding="tns:AaoServiceServiceSoapBinding" name="AaoServicePort">
+      <soap:address location="http://localhost:9000/aao/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9000/aao/</con:endpoint></con:endpoints><con:operation id="ab042a46-bc1e-47f0-82a6-44833c139dc0" isOneWay="false" action="" name="fixes" bindingOperationName="fixes" type="Request-Response" outputName="fixesResponse" inputName="fixes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="9ca8c0cf-2a56-4b3e-b815-949a5d64d216" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9000/aao/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:aao="http://aao/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <aao:fixes>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <bill>duck</bill>
+            <!--Optional:-->
+            <color>white</color>
+            <!--Optional:-->
+            <feet>3 webs</feet>
+            <!--Optional:-->
+            <walk>waddle</walk>
+            <!--Optional:-->
+            <wingspan>24inches</wingspan>
+         </arg0>
+      </aao:fixes>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://aao/AaoService/fixes"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

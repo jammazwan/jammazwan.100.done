@@ -1,0 +1,20 @@
+package jammazwan.replace;
+
+import java.util.Map;
+
+public class ReplacePomDependencies implements Replacement{
+	private final String SHARED = "<dependency><groupId>jammazwan</groupId><artifactId>shared</artifactId><version>0.0.1-SNAPSHOT</version></dependency>";
+
+	@Override
+	public String get(Map<String, String> replacements) {
+		StringBuffer sb = new StringBuffer();
+		String technology = replacements.get("technology");
+		String xyzCode = replacements.get("xyzCode");
+		if(xyzCode.startsWith("x")){
+			sb.append("")
+		}
+
+		return sb.toString();
+	}
+
+}

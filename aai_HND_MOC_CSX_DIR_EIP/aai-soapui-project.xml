@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="c2df63ed-01ba-4517-a098-4e574829e092" activeEnvironment="Default" name="aai" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="bea8998d-bd9b-4a92-8649-47304f8014a6" wsaVersion="NONE" name="AaiServiceServiceSoapBinding" type="wsdl" bindingName="{http://aai/}AaiServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:9000/aai/?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:9000/aai/?wsdl"><con:part><con:url>http://localhost:9000/aai/?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="AaiServiceService" targetNamespace="http://aai/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://aai/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://aai/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="fixes" type="tns:fixes"/>
+      <xs:element name="fixesResponse" type="tns:fixesResponse"/>
+      <xs:complexType name="fixes">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:car"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="car">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="model" type="xs:string"/>
+          <xs:element minOccurs="0" name="year" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="fixesResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:mechanic"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="mechanic">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="age" type="xs:string"/>
+          <xs:element minOccurs="0" name="town" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="fixes">
+    <wsdl:part element="tns:fixes" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="fixesResponse">
+    <wsdl:part element="tns:fixesResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AaiService">
+    <wsdl:operation name="fixes">
+      <wsdl:input message="tns:fixes" name="fixes"></wsdl:input>
+      <wsdl:output message="tns:fixesResponse" name="fixesResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AaiServiceServiceSoapBinding" type="tns:AaiService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="fixes">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="fixes">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="fixesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AaiServiceService">
+    <wsdl:port binding="tns:AaiServiceServiceSoapBinding" name="AaiServicePort">
+      <soap:address location="http://localhost:9000/aai/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9000/aai/</con:endpoint></con:endpoints><con:operation id="0128833b-b26b-4590-9a5d-d83646724714" isOneWay="false" action="" name="fixes" bindingOperationName="fixes" type="Request-Response" outputName="fixesResponse" inputName="fixes" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4081a3fc-4e0d-4b9d-a3bf-8d09e0e91ea3" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9000/aai/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:aai="http://aai/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <aai:fixes>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <model>Mustang</model>
+            <!--Optional:-->
+            <year>1966</year>
+         </arg0>
+      </aai:fixes>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://aai/AaiService/fixes"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

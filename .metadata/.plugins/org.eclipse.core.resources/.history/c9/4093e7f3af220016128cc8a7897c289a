@@ -1,0 +1,11 @@
+package jammazwan.load;
+
+import java.util.List;
+
+public class LoadFromFile {
+	public <T> List<T> load( ){
+		
+		return null;
+	}
+
+}

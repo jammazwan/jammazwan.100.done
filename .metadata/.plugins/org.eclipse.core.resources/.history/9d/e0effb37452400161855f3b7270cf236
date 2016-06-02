@@ -1,0 +1,8 @@
+package eae;
+
+public class Frog {
+	private String leg;
+	private String name;
+	private int smarts;
+
+}

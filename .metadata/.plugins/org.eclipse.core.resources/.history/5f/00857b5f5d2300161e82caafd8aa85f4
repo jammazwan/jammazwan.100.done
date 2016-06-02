@@ -1,0 +1,17 @@
+package jammazwan.raw;
+
+public interface Company {
+
+	int getRank();
+
+	void setRank(int rank);
+
+	String getCompanyName();
+
+	void setCompanyName(String companyName);
+
+	int getContacts();
+
+	void setContacts(int contacts);
+
+}

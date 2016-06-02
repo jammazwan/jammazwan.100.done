@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://abr/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="AbrServiceService" targetNamespace="http://abr/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://abr/" elementFormDefault="unqualified" targetNamespace="http://abr/" version="1.0">
+
+  <xs:element name="turns" type="tns:turns"/>
+
+  <xs:element name="turnsResponse" type="tns:turnsResponse"/>
+
+  <xs:complexType name="turns">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:pole"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="pole">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+      <xs:element minOccurs="0" name="type" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="turnsResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:crank"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="crank">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="desc" type="xs:string"/>
+      <xs:element minOccurs="0" name="handle" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="turnsResponse">
+    <wsdl:part element="tns:turnsResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="turns">
+    <wsdl:part element="tns:turns" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AbrService">
+    <wsdl:operation name="turns">
+      <wsdl:input message="tns:turns" name="turns">
+    </wsdl:input>
+      <wsdl:output message="tns:turnsResponse" name="turnsResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AbrServiceServiceSoapBinding" type="tns:AbrService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="turns">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="turns">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="turnsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AbrServiceService">
+    <wsdl:port binding="tns:AbrServiceServiceSoapBinding" name="AbrServicePort">
+      <soap:address location="http://localhost:9000/abr/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

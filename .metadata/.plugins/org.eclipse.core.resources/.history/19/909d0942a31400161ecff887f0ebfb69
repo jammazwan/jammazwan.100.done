@@ -1,0 +1,10 @@
+package abk;
+import javax.jws.WebService;
+
+import abk.domain.Area;
+import abk.domain.Region;
+
+@WebService
+public interface AduService {
+	Area enclose(Region region);
+}

@@ -1,0 +1,10 @@
+package abk;
+import javax.jws.WebService;
+
+import abk.domain.Tree;
+import abk.domain.Region;
+
+@WebService
+public interface AduService {
+	Tree enclose(Region region);
+}

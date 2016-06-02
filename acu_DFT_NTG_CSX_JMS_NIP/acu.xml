@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://acu/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="AcuServiceService" targetNamespace="http://acu/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://acu/" elementFormDefault="unqualified" targetNamespace="http://acu/" version="1.0">
+
+  <xs:element name="click" type="tns:click"/>
+
+  <xs:element name="clickResponse" type="tns:clickResponse"/>
+
+  <xs:complexType name="click">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:cart"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="cart">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="item" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="clickResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:result"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="result">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="date" type="xs:string"/>
+      <xs:element minOccurs="0" name="desc" type="xs:string"/>
+      <xs:element minOccurs="0" name="name" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="click">
+    <wsdl:part element="tns:click" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="clickResponse">
+    <wsdl:part element="tns:clickResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AcuService">
+    <wsdl:operation name="click">
+      <wsdl:input message="tns:click" name="click">
+    </wsdl:input>
+      <wsdl:output message="tns:clickResponse" name="clickResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AcuServiceServiceSoapBinding" type="tns:AcuService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="click">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="click">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="clickResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AcuServiceService">
+    <wsdl:port binding="tns:AcuServiceServiceSoapBinding" name="AcuServicePort">
+      <soap:address location="http://localhost:9000/acu/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

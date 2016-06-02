@@ -1,0 +1,50 @@
+# jammazwan.100
+
+This README and a separately downloadable tar, below, are about all that this project consists of. 
+
+You may want to read these minimal instructions very carefully before doing anything, to save yourself some time.
+
+### What jammazwan.100 is/does:
+
+Jammazwan 100 gives you 100 starter projects in single workspace, with a set of README instructions on how to complete these projects.
+
+It will put you through maybe not 100, (there are a few dupes, as it is randomly generated) but almost 100 unique variations of Camel integration projects. From JPA to CSX to JMS to .... different combinations of each.
+
+Every project tries to have at least 2 routes, and multiple technologies
+
+When you start out, it may take quite a bit of time for _each unfamiliar project_, as you'll have to gather up the configuration details. But that is half of the point of doing this exercise. 
+
+But once you get them down, it may take as little as 10-15 minutes per project. By the end, your Camel skills will be greatly solidified. This fulfills the other objective of **jammazwan.100**, which is to give you plenty of reps.
+
+### How To:
+
+Download the workspace tar from here: (github doesn't much like larger binaries)
+
+http://docs.datafundamentals.com/jammazwan/jammazwan100.tar.gz
+
+ * uncompress tar as a folder
+ * open workspace folder as clean workspace (in eclipse as default, or your own favorite)
+ * import as "Existing eclipse projects" any or all 
+ * separately, you may or may not wish to open the file named jammazwanBatch100.txt 
+ * you are now ready to write 200+ routes and test your speed.
+ 
+### Cheat Sheet:
+
+I am including my own text file as almost the only source in this github project. It is mostly gibberish to anyone else, but it does have almost all of the text you would need to copy into various files to complete the projects. Every pom entry, every fix to your own object to make it a bindy or JPA object, it's all there. 
+
+
+Use at your own risk, no instructions included. You're supposed to be figuring all this stuff out on your own, right?
+
+### Project README or all 100?
+
+Each project has it's own README, which advises you on how to complete that project. But after I did a few, I found it easier to keep the batch100 README open in my text editor and complete everything from there.
+
+### Solved:
+
+Well, I got 85 of 100 done. I deferred the CXF WSDL-to-code projects because I was still working on that configuration at the time. Then I never got back to them. [Go here for the completed workspace](https://github.com/jammazwan/jammazwan.100.done)
+
+### How Were These Projects Generated?
+
+Randomly!
+
+Actually, they were all generated using [jammazwan.maker](https://github.com/jammazwan/jammazwan.maker), a Camel project generator.

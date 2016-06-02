@@ -1,0 +1,13 @@
+package jammazwan.replace;
+
+import java.util.Map;
+
+public class ReplacePomDependencies implements Replacement{
+
+	@Override
+	public String get(Map<String, String> replacements) {
+		String technology = replacements.get("technology");
+		return null;
+	}
+
+}

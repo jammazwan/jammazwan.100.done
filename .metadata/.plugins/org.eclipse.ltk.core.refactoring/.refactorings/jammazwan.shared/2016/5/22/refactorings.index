@@ -1,0 +1,101 @@
+1464106652285	Rename resource 'names.tsv'
+1464108249957	Move compilation units
+1464108309972	Move folder
+1464108317204	Move files
+1464108322074	Delete element
+1464108547141	Extract interface 'ICity'
+1464108577483	Move compilation unit
+1464115638126	Rename resource 'cities.txt'
+1464116648539	Rename resource 'citiesNeedsComma4thPosition.txt'
+1464129796073	Delete element
+1464141271865	Rename type 'City'
+1464141289513	Rename type 'CountryCategory'
+1464141297965	Rename type 'CityRaw'
+1464141308082	Rename type 'CountryCode'
+1464141314281	Rename type 'Name'
+1464141319733	Rename type 'RankValue'
+1464141332792	Rename type 'ICity'
+1464141368453	Extract interface 'CountryCategory'
+1464141375499	Move compilation unit
+1464141385704	Delete element
+1464141470178	Extract interface 'City'
+1464141477058	Move compilation unit
+1464141497818	Extract interface 'CountryCode'
+1464141514946	Move compilation unit
+1464141541839	Rename type 'Pojo'
+1464141559140	Extract interface 'Name'
+1464141571542	Move compilation unit
+1464141607177	Extract interface 'RankValue'
+1464141618746	Move compilation unit
+1464141855951	Copy compilation unit
+1464141857852	Copy compilation unit
+1464141870279	Rename type 'CityPojo'
+1464141885085	Rename type 'CityPojo'
+1464141892450	Rename type 'CityJpa'
+1464203187227	Rename resource 'feed'
+1464203199757	Rename resource 'base'
+1464203274575	Rename resource 'jamz'
+1464203306564	Rename package 'feed'
+1464203315209	Rename package 'feed.csv'
+1464203324078	Rename package 'feed.raw'
+1464203334060	Rename package 'feed.jpa'
+1464207154428	Move compilation unit
+1464207879892	Rename type 'AatRoutes'
+1464208023139	Rename type 'AatTest'
+1464209804523	Rename resource 'camel-route.xml'
+1464270203773	Copy compilation unit
+1464270963501	Copy compilation unit
+1464272543228	Rename local variable 'arg0'
+1464275117246	Delete element
+1464275143879	Rename type 'CleanSurnameRoutes'
+1464275363671	Extract interface 'Surname'
+1464275371150	Move compilation unit
+1464275449070	Copy compilation unit
+1464275455016	Copy compilation unit
+1464275467435	Rename type 'SurnamePojo'
+1464275481471	Rename type 'SurnamePojo'
+1464275578486	Move compilation unit
+1464275912743	Copy compilation unit
+1464278162778	Rename type 'Company'
+1464278175441	Rename resource 'names.csv'
+1464278188207	Rename resource 'cities.csv'
+1464278200261	Rename resource 'companies.txt'
+1464278685056	Rename resource 'company.txt'
+1464279331677	Copy compilation unit
+1464279335864	Copy compilation unit
+1464279352597	Copy compilation unit
+1464279355049	Copy compilation unit
+1464279396378	Delete elements
+1464279409385	Delete elements
+1464279449839	Extract interface 'Company'
+1464279462230	Move compilation unit
+1464279523591	Copy compilation unit
+1464279528398	Copy compilation unit
+1464279536056	Rename type 'CompanyPojo'
+1464279550993	Rename type 'CompanyPojo'
+1464279714278	Copy compilation unit
+1464279857294	Delete element
+1464280112831	Rename type 'CompanyToJpa'
+1464280390270	Copy file
+1464280749921	Delete element
+1464280754253	Move file
+1464282011325	Copy compilation unit
+1464282013931	Copy compilation unit
+1464282025424	Rename type 'NamePojo'
+1464282038176	Rename type 'NamePojo'
+1464282998609	Copy compilation unit
+1464283001758	Copy compilation unit
+1464283015795	Rename type 'CountryCategoryPojo'
+1464283029065	Rename type 'CountryCategoryPojo'
+1464283300796	Copy compilation unit
+1464283657136	Rename resource 'categories.csv'
+1464283665504	Rename resource 'codes.csv'
+1464301327512	Copy compilation unit
+1464301333243	Copy compilation unit
+1464301349889	Rename type 'CountryCodePojo'
+1464301557389	Copy compilation unit
+1464301916733	Rename type 'CountryCodePojo'
+1464301968495	Delete element
+1464302008807	Extract interface 'CountryCode'
+1464302029450	Move compilation unit
+1464317705372	Rename local variable 'tryme'

@@ -1,0 +1,10 @@
+package feed;
+
+public class City {
+	private int rank;
+	private String city;
+	private String country;
+	private int population;
+	private int sqkm;
+	private int densitySqKm;
+}

@@ -1,0 +1,44 @@
+package jammazwan;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import org.apache.camel.impl.DefaultCamelContext;
+
+import jammazwan.entity.XmplProject;
+import jammazwan.util.ReadMeGenerate;
+import jammazwan.util.Utils;
+
+public class XyzReRunMain {
+	UnMarshalExampleProjects unMarshalExampleProjects = new UnMarshalExampleProjects();
+
+	public static void main(String[] args) throws Exception {
+		XyzReRunMain xyzReRun = new XyzReRunMain();
+		xyzReRun.go();
+		for(Map xmplProject:xyzReRun.unMarshalExampleProjects.getExampleProjects()){
+			buildProject(xmplProject);
+		}
+	}
+
+	private static void buildProject(Map replacements) {
+		replacements.put("projectname", replacements.get("name"));
+		replacements.put("rootDir", replacements.get("name") + "/");
+//		replacements.put("xyzCode", xyzCode);
+		replacements.put("pckg", replacements.get("xyzCode"));
+		replacements.put("readme", "nothing for you here" );
+		replacements.put("FileNamePrefix", Utils.upLow(xyzCode));
+		go(replacements);
+	}
+
+	private void go() throws Exception {
+		DefaultCamelContext context = new DefaultCamelContext();
+		context.addRoutes(unMarshalExampleProjects);
+		context.start();
+		Thread.sleep(5000);
+		context.stop();
+		System.gc();
+	}
+
+}

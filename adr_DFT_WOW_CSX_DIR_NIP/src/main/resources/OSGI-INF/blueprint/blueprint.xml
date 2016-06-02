@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0"
+	xmlns:cxf="http://camel.apache.org/schema/blueprint/cxf" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.osgi.org/xmlns/blueprint/v1.0.0 http://www.osgi.org/xmlns/blueprint/v1.0.0/blueprint.xsd http://camel.apache.org/schema/blueprint/cxf http://camel.apache.org/schema/blueprint/cxf/camel-cxf.xsd http://camel.apache.org/schema/blueprint http://camel.apache.org/schema/blueprint/camel-blueprint.xsd">
+
+	<cxf:cxfEndpoint id="entryEndpoint" address="/adr/"
+		serviceClass="adr.domain.AdrService" />
+	<bean id="cxfProcessor" class="adr.CxfProcessor" />
+
+	
+	<camelContext id="camelContext-2bd87fe3-305b-4b6a-8f69-37571c952e"
+		xmlns="http://camel.apache.org/schema/blueprint">
+		<route id="cxf">
+			<from id="_from1" uri="cxf:bean:entryEndpoint" />
+			<recipientList id="_recipientList1">
+				<simple>direct:${header.operationName}</simple>
+			</recipientList>
+		</route>
+		<route id="click">
+			<from id="_from2" uri="direct:click" />
+			<process id="_process1" ref="cxfProcessor" />
+		</route>
+	</camelContext>
+
+</blueprint>

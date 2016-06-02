@@ -1,0 +1,12 @@
+package feed.raw;
+
+public class CountryCode {
+	private String name;
+	private String GEC;
+	private String A3;
+	private String A2;
+	private String num;
+	private String STANAG;
+	private String internet;
+
+}

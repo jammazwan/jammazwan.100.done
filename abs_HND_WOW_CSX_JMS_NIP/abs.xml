@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://abs/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="AbsService" targetNamespace="http://abs/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://abs/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://abs/">
+  <xs:complexType name="tube">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="diameter" type="xs:string"/>
+      <xs:element minOccurs="0" name="length" type="xs:string"/>
+      <xs:element minOccurs="0" name="material" type="xs:string"/>
+      <xs:element minOccurs="0" name="thickness" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="roll" type="roll"/>
+  <xs:complexType name="roll">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="arg0" type="tube"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="rollResponse" type="rollResponse"/>
+  <xs:complexType name="rollResponse">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="roll">
+    <wsdl:part element="tns:roll" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="rollResponse">
+    <wsdl:part element="tns:rollResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AbsServicePortType">
+    <wsdl:operation name="roll">
+      <wsdl:input message="tns:roll" name="roll">
+    </wsdl:input>
+      <wsdl:output message="tns:rollResponse" name="rollResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AbsServiceSoapBinding" type="tns:AbsServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="roll">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="roll">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="rollResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AbsService">
+    <wsdl:port binding="tns:AbsServiceSoapBinding" name="AbsServicePort">
+      <soap:address location="http://localhost:9000/abs/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

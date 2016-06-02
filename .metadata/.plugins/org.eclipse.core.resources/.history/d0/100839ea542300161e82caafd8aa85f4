@@ -1,0 +1,25 @@
+package jammazwan.csv;
+
+import jammazwan.Surname;
+
+public class SurnameCsv implements Surname {
+	String name;
+
+	public SurnameCsv() {
+		super();
+	}
+
+	public SurnameCsv(String name) {
+		super();
+		this.name = name;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+}

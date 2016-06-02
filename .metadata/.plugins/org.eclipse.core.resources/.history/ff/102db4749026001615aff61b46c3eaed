@@ -1,0 +1,21 @@
+package jammazwan;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import jammazwan.entity.XmplProject;
+
+public class XyzReRun {
+	List<XmplProject> exampleProjects = new ArrayList<XmplProject>();
+
+	public static void main(String[] args) {
+		XyzReRun xyzReRun = new XyzReRun();
+		xyzReRun.go();
+	}
+
+	private void go() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}

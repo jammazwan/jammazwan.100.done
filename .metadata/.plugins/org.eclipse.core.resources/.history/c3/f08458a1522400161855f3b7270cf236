@@ -1,0 +1,10 @@
+package jammazwan.entity;
+
+public class XmplProject {
+	private String name;
+	private String desc;
+	private String version;
+	private String technology;
+	private String specialInstructions;
+
+}

@@ -1,0 +1,19 @@
+## Camel Keeper: Jammazwan
+
+"Jammazwan" means "camel keeper" in Hindi. Camel, in this instance, means [**Apache Camel**](http://camel.apache.org/), which is sponsored and maintained by Red Hat, and a part of it's [Fuse](https://www.redhat.com/en/technologies/jboss-middleware/fuse) offering.
+---
+
+### ${headers.projectName}
+
+Welcome to ${headers.projectName}
+
+This project is a code demo project - designed to isolate functionality and make it easy replicate-able. Specifically:
+
+**_${headers.projectName}_**
+
+#### Dependencies First:
+
+Relax! This project runs almost all by itself, no huge web of parent poms to obfuscate what is going on under the covers.
+
+But it does have *one* dependency, so you always have to git clone that into the same folder first, 
+then run mvn install on that first, before messing with this project.

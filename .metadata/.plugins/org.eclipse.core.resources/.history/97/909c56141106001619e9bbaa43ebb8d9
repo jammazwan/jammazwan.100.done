@@ -1,0 +1,29 @@
+package myorg;
+
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.test.junit4.CamelTestSupport;
+import org.junit.Test;
+
+public class RoutingSlipWithProcessTest extends CamelTestSupport {
+	@Test
+	public void testRoutingSlip() throws Exception {
+		getMockEndpoint("mock:x").expectedMessageCount(1);
+		getMockEndpoint("mock:y").expectedMessageCount(0);
+		getMockEndpoint("mock:z").expectedMessageCount(1);
+		template.sendBody("direct:start", "big bertha");
+		assertMockEndpointsSatisfied();
+	}
+
+    @Override
+    protected RouteBuilder createRouteBuilder() throws Exception {
+        return new RouteBuilder() {
+            @Override
+            public void configure() throws Exception {
+                from("direct:start")
+                    // compute the routing slip at runtime using a bean
+                    // use the routing slip EIP
+                    .routingSlip().method(ComputeSlip.class);
+            }
+        };
+    }
+}

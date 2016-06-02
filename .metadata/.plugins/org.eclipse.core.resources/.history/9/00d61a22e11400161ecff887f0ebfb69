@@ -1,0 +1,9 @@
+package aai.domain;
+
+import java.io.Serializable;
+
+public class Mechanic implements Serializable {
+	private String age;
+	private String town;
+
+}

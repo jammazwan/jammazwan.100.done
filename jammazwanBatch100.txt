@@ -1,0 +1,2115 @@
+0 begin: aaa_DDL_NTG_CSX_DIR_NIP
+set this project aside for a while until I get better aquainted with Fuse
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[contract first cxf bean]
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - unmarshal object(s) into CSV format
+    - FTP into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+1 begin: aab_HND_MOC_CSX_DIR_NIP
+set this project aside for a while until I get better aquainted with Fuse
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+2 begin: aac_HND_NTG_FIL_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:XML_MENU
+    - unmarshall to [java object model] with [jaxb or xstream] 
+    - your Message body should now consist of java object 
+    - transform body here with Processor bean, declared in Camel Context as a ref, not a URI 
+    - exit transform with body as a delimited CSV string 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+3 begin: aad_HND_MOC_TPL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - send this message via JMS to something that sounds important
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - add a script, or manually if only option, deploying to a EAP
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+4 begin: aae_HND_NTG_FIL_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:CSV_SALE
+    - split using camel-csv to List<String> 
+    - your Message body should now consist of a list of delimited strings 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+5 begin: aaf_HND_WOW_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a ref, not a URI 
+    - your Message body should now consist of java object 
+    - transform body here with Processor bean, declared in Camel Context as a ref, not a URI 
+    - exit transform with body as a string 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+6 begin: aag_DDL_WOW_JMS_EIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a URI, not a ref 
+    - your Message body should now consist of java object 
+    - transform body here with Processor bean, declared in Camel Context as a URI, not a ref 
+    - exit transform with body as XML 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - use the Aggregator EIPattern to create dispatch(s) by some kind of reasonable logic
+    - AND use body of your message as part of this 'reasonable logic
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - add a script, or manually if only option, deploying to a Karaf
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+7 begin: aah_DFT_WOW_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a ref, not a URI 
+    - your Message body should now consist of java object 
+    - transform body here with Processor bean, declared in Camel Context as a ref, not a URI 
+    - exit transform with body as JSON 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+8 begin: aai_HND_MOC_CSX_DIR_EIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    [done] - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use the Routing Slip EIPattern to create dispatch(s) by some kind of reasonable logic
+    - consume or modify headers of your message as part of this 'reasonable logic'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+9 begin: aaj_HND_MOC_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    [done] - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a ref, not a URI 
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - unmarshal object(s) into CSV format
+    - FTP into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to a EAP
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+10 begin: aak_DDL_WOW_TPL_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+11 begin: aal_HND_MOC_FIL_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    [done] - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:XML_CD
+    - unmarshall to [java object model] with [jaxb or xstream] 
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - add a script, or manually if only option, deploying to a EAP
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+12 begin: aam_DFT_MOC_FIL_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    [done] - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:CSV_TRANS
+    - unmarshall to [java object model] with bindy 
+    - your Message body should now consist of java object 
+    - transform body here with anonymous inner class Processor 
+    - exit transform with body as a string 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+13 begin: aan_DFT_WOW_CSX_JMS_EIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - use the Aggregator EIPattern to create dispatch(s) by some kind of reasonable logic
+    - AND use body of your message as part of this 'reasonable logic
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+14 begin: aao_DDL_MOC_CSX_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    [done] - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - add a script, or manually if only option, deploying to a EAP
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+15 begin: aap_DFT_MOC_CSX_JMS_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    [done] - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - add a script, or manually if only option, deploying to a Karaf
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+16 begin: aaq_DDL_WOW_TPL_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+17 begin: aar_DFT_WOW_TPL_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - add a script, or manually if only option, deploying to a EAP
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+18 begin: aas_HND_NTG_CSX_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+19 begin: aat_DFT_NTG_CSX_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - unmarshal object(s) into XML format
+    - file into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to a EAP
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+20 begin: aau_DFT_NTG_FIL_JMS_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:CSV_SALE
+    - your Message body should now consist of CSV file contents 
+    - transform body here with Processor bean, declared in Camel Context as a URI, not a ref 
+    - exit transform with body as a string 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - send this message via JMS to something that sounds important
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - add a script, or manually if only option, deploying to a EAP
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+21 begin: aav_DDL_WOW_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a ref, not a URI 
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - unmarshal object(s) into CSV format
+    - FTP into named folder
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+22 begin: aaw_DDL_NTG_CSX_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+23 begin: aax_DFT_MOC_TPL_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    [done] - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - transform the string using a Processor, by modifying the existing string in the IN message
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+24 begin: aay_HND_NTG_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a ref, not a URI 
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+25 begin: aaz_DFT_WOW_TPL_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+26 begin: aba_HND_NTG_TPL_DIR_EIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - transform the string using a Processor, but alter the string to the OUT message, leaving the IN message as is
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use the Routing Slip EIPattern to create dispatch(s) by some kind of reasonable logic
+    - AND use body of your message as part of this 'reasonable logic
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+27 begin: abb_DFT_NTG_FIL_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:JSON_ZIP
+    - your Message body should now consist of JSON file contents 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+28 begin: abc_HND_NTG_TPL_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - transform the string using a Processor, by modifying the existing string in the IN message
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to a EAP
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+29 begin: abd_DDL_MOC_CSX_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[contract first cxf bean]
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - unmarshal object(s) into CSV format
+    - FTP into named folder
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - add a script, or manually if only option, deploying to a EAP
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+30 begin: abe_DDL_NTG_DIR_EIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a URI, not a ref 
+    - your Message body should now consist of java object 
+    - transform body here with Processor bean, declared in Camel Context as a URI, not a ref 
+    - exit transform with body as a java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use the Routing Slip EIPattern to create dispatch(s) by some kind of reasonable logic
+    - AND use body of your message as part of this 'reasonable logic
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - add a script, or manually if only option, deploying to a Karaf
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+31 begin: abf_HND_MOC_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    [done] - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a ref, not a URI 
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+32 begin: abg_DDL_NTG_TPL_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+33 begin: abh_DFT_WOW_DIR_EIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a URI, not a ref 
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use the Wire-Tap EIPattern to log a relevant comment about this message
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+34 begin: abi_DDL_WOW_FIL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:XML_MENU
+    - your Message body should now consist of XML file contents 
+    - transform body here with Processor bean, declared in Camel Context as a ref, not a URI 
+    - exit transform with body as a java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - unmarshal object(s) into CSV format
+    - FTP into named folder
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+35 begin: abj_DFT_MOC_TPL_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    [done] - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - add a script, or manually if only option, deploying to a Karaf
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+36 begin: abk_DDL_WOW_CSX_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - unmarshal object(s) into XML format
+    - file into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+37 begin: abl_HND_MOC_CSX_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[contract first cxf bean]
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - unmarshal object(s) into CSV format
+    - FTP into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+38 begin: abm_DFT_MOC_TPL_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    [done] - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+39 begin: abn_DFT_MOC_TPL_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to a EAP
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+40 begin: abo_DDL_MOC_FIL_DIR_NIP
+This project was left unfinished because I couldn't figure out, yet, how to utilized the NO_ROOT for reading the files. I made some progress but apparently there is some more stuff I still need to learn about. Until then I am marking all 4 projects with json to java as doNotTry this is not about learning camel it is about learning a specifice part of camel that would probably not be tested
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:JSON_ZIP
+    - your Message body should now consist of JSON file contents 
+    - transform body here with anonymous inner class Processor 
+    - exit transform with body as a java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+41 begin: abp_DFT_NTG_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a ref, not a URI 
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+42 begin: abq_DFT_WOW_TPL_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+43 begin: abr_DFT_WOW_CSX_JMS_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - unmarshal object(s) into XML format
+    - file into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+44 begin: abs_HND_WOW_CSX_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+45 begin: abt_DDL_NTG_FIL_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:XML_CD
+    - your Message body should now consist of XML file contents 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - add a script, or manually if only option, deploying to a Karaf
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+46 begin: abu_DDL_WOW_FIL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:CSV_TRANS
+    - unmarshall to [java object model] with bindy 
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+47 begin: abv_DFT_WOW_CSX_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - unmarshal object(s) into XML format
+    - file into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+48 begin: abw_DDL_NTG_FIL_DIR_EIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:JSON_BANK
+    - your Message body should now consist of JSON file contents 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use the Routing Slip EIPattern to create dispatch(s) by some kind of reasonable logic
+    - consume or modify headers of your message as part of this 'reasonable logic'
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+49 begin: abx_DDL_MOC_JMS_EIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a ref, not a URI 
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - use the Wire-Tap EIPattern to log a relevant comment about this message
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+50 begin: aby_DDL_WOW_TPL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - send this message via JMS to something that sounds important
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+51 begin: abz_HND_WOW_TPL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - send this message via JMS to something that sounds important
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+52 begin: aca_DFT_NTG_TPL_DIR_EIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use the Dynamic Route EIPattern to create dispatch(s) by some kind of reasonable logic
+    - consume or modify headers of your message as part of this 'reasonable logic'
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+53 begin: acb_DDL_NTG_FIL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:YOUR_OWN_FILE
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to a Karaf
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+54 begin: acc_DFT_WOW_CSX_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[contract first cxf bean]
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - add a script, or manually if only option, deploying to a Karaf
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+55 begin: acd_HND_MOC_FIL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:JSON_BANK
+    - unmarshall to [java object model] with jackson 
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - unmarshal object(s) into CSV format
+    - FTP into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+56 begin: ace_HND_WOW_FIL_JMS_NIP
+note: This project was done, but did not work because combination of xstream, jms, and jpa all in one seems to be incompatible the way I am doing it. I had to change the order of the routes from unmarshall-jms-jpa to jms-unmarshall-jpa. I had to make Person a class which is not serializable.
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:XML_PERSON
+    - unmarshall to [java object model] with [jaxb or xstream] 
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - add a script, or manually if only option, deploying to a Karaf
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+57 begin: acf_DDL_MOC_TPL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - send this message via JMS to something that sounds important
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+58 begin: acg_DDL_NTG_CSX_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[contract first cxf bean]
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+59 begin: ach_DDL_WOW_FIL_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:JSON_BANK
+    - your Message body should now consist of JSON file contents 
+    - to direct endpoint
+    [2nd route]`
+    - from direct endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+60 begin: aci_DDL_MOC_TPL_DIR_EIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - transform the string using a Processor, by modifying the existing string in the IN message
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use the Routing Slip EIPattern to create dispatch(s) by some kind of reasonable logic
+    - AND use body of your message as part of this 'reasonable logic
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+61 begin: acj_HND_MOC_JMS_NIP
+        //LOOK MA! This shouldn't be possible because used jms and Cd class is not Serializeable but it worked anyway. Weird that I couldn't get it to work in other projects
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a ref, not a URI 
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - unmarshal object(s) into XML format
+    - file into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to a EAP
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+62 begin: ack_DDL_WOW_TPL_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to direct endpoint\
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+63 begin: acl_DFT_MOC_CSX_JMS_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[contract first cxf bean]
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+64 begin: acm_DFT_NTG_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a ref, not a URI 
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - unmarshal object(s) into XML format
+    - file into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+65 begin: acn_DFT_NTG_CSX_JMS_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - unmarshal object(s) into XML format
+    - file into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+66 begin: aco_DFT_WOW_TPL_JMS_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - send this message via JMS to something that sounds important
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - add a script, or manually if only option, deploying to a EAP
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+67 begin: acp_DFT_NTG_FIL_DIR_EIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:YOUR_OWN_FILE
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use the Recipient List EIPattern to create dispatch(s) by some kind of reasonable logic
+    - consume or modify headers of your message as part of this 'reasonable logic'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+68 begin: acq_DDL_MOC_TPL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - send this message via JMS to something that sounds important
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+69 begin: acr_DDL_WOW_TPL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - transform the string using a Processor, by modifying the existing string in the IN message
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - send this message via JMS to something that sounds important
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+70 begin: acs_DDL_NTG_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a ref, not a URI 
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - unmarshal object(s) into CSV format
+    - FTP into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+71 begin: act_HND_WOW_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a URI, not a ref 
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+72 begin: acu_DFT_NTG_CSX_JMS_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - unmarshal object(s) into CSV format
+    - FTP into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - add a script, or manually if only option, deploying to a Karaf
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+73 begin: acv_DDL_WOW_CSX_JMS_EIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - use the Aggregator EIPattern to create dispatch(s) by some kind of reasonable logic
+    - AND use body of your message as part of this 'reasonable logic
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+74 begin: acw_HND_MOC_CSX_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - transform body here with Processor bean, declared in Camel Context as a URI, not a ref 
+    - exit transform with body as a java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - unmarshal object(s) into CSV format
+    - FTP into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+75 begin: acx_DDL_NTG_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a URI, not a ref 
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - unmarshal object(s) into CSV format
+    - FTP into named folder
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+76 begin: acy_HND_MOC_FIL_JMS_EIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:CSV_CRIME
+    - unmarshall to [java object model] with bindy 
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - use the Routing Slip EIPattern to create dispatch(s) by some kind of reasonable logic
+    - AND use body of your message as part of this 'reasonable logic
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+77 begin: acz_HND_MOC_FIL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:JSON_STOCK
+    - your Message body should now consist of JSON file contents 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+78 begin: ada_HND_WOW_FIL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:CSV_SALE
+    - your Message body should now consist of CSV file contents 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - add a script, or manually if only option, deploying to a Karaf
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+79 begin: adb_HND_MOC_DIR_EIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a ref, not a URI 
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use the Recipient List EIPattern to create dispatch(s) by some kind of reasonable logic
+    - AND use body of your message as part of this 'reasonable logic
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+80 begin: adc_DDL_NTG_TPL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - transform the string using a Processor, by modifying the existing string in the IN message
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - send this message via JMS to something that sounds important
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - add a script, or manually if only option, deploying to a Docker engine
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+81 begin: add_DDL_MOC_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a URI, not a ref 
+    - your Message body should now consist of java object 
+    - transform body here with Processor bean, declared in Camel Context as a URI, not a ref 
+    - exit transform with body as XML 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+82 begin: ade_HND_WOW_CSX_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[contract first cxf bean]
+    - your Message body should now consist of java object 
+    - transform body here with anonymous inner class Processor 
+    - exit transform with body as JSON 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+83 begin: adf_DFT_MOC_FIL_JMS_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:XML_PERSON
+    - your Message body should now consist of XML file contents 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+84 begin: adg_DFT_MOC_CSX_DIR_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[contract first cxf bean]
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - unmarshal object(s) into XML format
+    - file into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - add a script, or manually if only option, deploying to a EAP
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+85 begin: adh_DFT_MOC_FIL_DIR_EIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:XML_MENU
+    - your Message body should now consist of XML file contents 
+    - transform body here with Processor bean, declared in Camel Context as a ref, not a URI 
+    - exit transform with body as XML 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use the Recipient List EIPattern to create dispatch(s) by some kind of reasonable logic
+    - AND use body of your message as part of this 'reasonable logic
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to a EAP
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+86 begin: adi_HND_MOC_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a ref, not a URI 
+    - your Message body should now consist of java object 
+    - transform body here with anonymous inner class Processor 
+    - exit transform with body as a delimited CSV string 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+87 begin: adj_HND_MOC_TPL_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+88 begin: adk_DDL_NTG_TPL_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    - template.sendBody([some String by you]) FROM INSIDE JUNIT TEST
+    [1st route]
+    - your message body is now a simple string
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP this to a named folder, using the file name of 'Important', suffixed with a timestamp, and '.txt'
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - add a script, or manually if only option, deploying to a Karaf
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+89 begin: adl_DDL_WOW_FIL_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:JSON_BANK
+    - unmarshall to [java object model] with jackson 
+    - your Message body should now consist of java object 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - unmarshal object(s) into CSV format
+    - FTP into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - add a script, or manually if only option, deploying to a Karaf
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+90 begin: adm_HND_WOW_CSX_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[contract first cxf bean]
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - use JPA to persist object into database
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - modify to use a remote or embedded db, whichever you did not use for your first pass
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+91 begin: adn_DDL_MOC_CSX_DIR_EIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - transform body here with Processor bean, declared in Camel Context as a URI, not a ref 
+    - exit transform with body as a string 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - use the Routing Slip EIPattern to create dispatch(s) by some kind of reasonable logic
+    - consume or modify headers of your message as part of this 'reasonable logic'
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - add a script, or manually if only option, deploying to a Karaf
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+92 begin: ado_HND_MOC_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a ref, not a URI 
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - unmarshal object(s) into CSV format
+    - FTP into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in blueprint.xml
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+93 begin: adp_HND_NTG_FIL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:XML_CD
+    - your Message body should now consist of XML file contents 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+94 begin: adq_DDL_MOC_FIL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:XML_CD
+    - your Message body should now consist of XML file contents 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+95 begin: adr_DFT_WOW_CSX_DIR_NIP
+only going to do the non-json part of this first, then set it aside for later until I learn the json part
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - transform body here with Processor bean, declared in Camel Context as a ref, not a URI 
+    - exit transform with body as JSON 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - add a script, or manually if only option, deploying to a Karaf
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+96 begin: ads_DFT_WOW_JMS_NIP
+PROJECT REQUIREMENTS
+    - default to the normal exception handling provided
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from timer... with appropriate attributes
+    - begin route with Processor bean, declared in Camel Context as a URI, not a ref 
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - unmarshal object(s) into XML format
+    - file into named folder
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+97 begin: adt_DDL_WOW_FIL_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - use the "act surprised method" and do no testing of any sort
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:JSON_BANK
+    - unmarshall to [java object model] with jackson 
+    - your Message body should now consist of java object 
+    - transform body here with Processor bean, declared in Camel Context as a ref, not a URI 
+    - exit transform with body as a string 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - send this message via JMS to something that sounds important
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java
+    - write your routes in xml, unless you already did in your first pass
+
+
+
+
+98 begin: adu_HND_MOC_CSX_JMS_NIP
+PROJECT REQUIREMENTS
+    - in at least one area, catch exceptions and deal with them with a handler
+    - use mocks to confirm that recipients and/or messages conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from cxf.[code first cxf bean]
+    - your Message body should now consist of java object 
+    - to JMS endpoint
+    [2nd route]
+    - from JMS endpoint
+    - unmarshal object(s) into XML format
+    - file into named folder
+FOR EXTRA CREDIT:
+    - modify to use spring for your camel context, if not already in spring
+    - add a script, or manually if only option, deploying to Fabric8
+    - write your routes in java, unless you already did in your first pass
+
+
+
+
+99 begin: adv_DDL_NTG_FIL_DIR_NIP
+PROJECT REQUIREMENTS
+    - in at least one area or process, utilize the Dead Letter approach
+    - in at least one area, use an integration test to confirm that actual message or recipients conform to expectations
+PSEUDOCODE FOR ROUTES
+    [1st route]
+    - from file:XML_MENU
+    - your Message body should now consist of XML file contents 
+    - to direct endpoint
+    [2nd route]
+    - from direct endpoint
+    - FTP file to a specified folder
+    - log as FTP'd to a folder and identify name of file in the log
+FOR EXTRA CREDIT:
+    - modify to create your camel contex in java, within your testt
+    - write your routes in java, unless you already did in your first pass
+
+
+
+

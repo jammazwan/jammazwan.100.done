@@ -1,0 +1,13 @@
+package jammazwan.util;
+
+public class SleepUntilSeemsIdle {
+	public static work(){
+		try{
+			Thread
+		}
+	}
+	
+	private static void sleep(){
+		Thread
+	}
+}

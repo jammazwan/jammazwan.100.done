@@ -1,0 +1,10 @@
+package aai.domain;
+
+import java.io.Serializable;
+
+public class Car implements Serializable {
+	private String model;
+	private String year;
+
+
+}

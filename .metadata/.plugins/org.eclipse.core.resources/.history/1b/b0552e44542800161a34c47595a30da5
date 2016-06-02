@@ -1,0 +1,7 @@
+# jammazwan.docker
+
+This is a simple project to demonstrate how you can use docker to set up supporting infrastructure for your camel learning projects, without spending hours doing machine admin.
+
+It assumes you already have your machine set up to run docker, but if that isn't the case you have a whole different set of problems. Docker is inevitable. Resistance is futile.
+
+

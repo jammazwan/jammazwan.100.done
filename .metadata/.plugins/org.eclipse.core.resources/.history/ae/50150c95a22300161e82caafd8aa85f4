@@ -1,0 +1,20 @@
+package jammazwan.jive;
+
+public class Utils {
+	public static String upLow(String var) {
+		if (var == null | var.equals("")) {
+			return " ";
+		}
+		String start = var.substring(0, 1);
+		String finish = var.substring(1, var.length()).toLowerCase();
+		return start.toUpperCase() + finish;
+	}
+	public static String upFirst(String var) {
+		if (var == null | var.equals("")) {
+			return " ";
+		}
+		String start = var.substring(0, 1);
+		String finish = var.substring(1, var.length()).toLowerCase();
+		return start.toUpperCase() + finish;
+	}
+}

@@ -1,0 +1,61 @@
+package jammazwan;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.jms.ConnectionFactory;
+
+import org.apache.activemq.ActiveMQConnectionFactory;
+import org.apache.camel.CamelContext;
+import org.apache.camel.component.jms.JmsComponent;
+import org.apache.camel.impl.DefaultCamelContext;
+
+import jammazwan.util.ThreeCharOrdinal;
+
+public class SetupsMain {
+	static StringBuffer sb = new StringBuffer();
+	static int i;
+
+	public static void main(String args[]) throws Exception {
+		new SetupsMain().loop();
+	}
+
+	private void loop() throws Exception {
+		/*
+		 * Super awkward way of avoiding Multiple Consumer on Endpoint
+		 * exceptions. Wish I knew a better way than to run a completely new
+		 * context every time.
+		 */
+		List<String> partList = new ThreeCharOrdinal().get("faa", 1);
+		for (String s : partList) {
+			go(s);
+		}
+		FileWriter fileWriter = new FileWriter(new File("generated/f_batch.txt"));
+		fileWriter.write(sb.toString());
+		fileWriter.close();
+	}
+
+	private void go(String s) throws Exception {
+		Map<String, String> replacements = new HashMap<String, String>();
+		CamelContext context = new DefaultCamelContext();
+		InputRouteBuilder inputRouteBuilder = new InputRouteBuilder(s);
+		sb.append("" + i++ +" begin: " + inputRouteBuilder.readMeGenerator.getName()+ "\n");
+		sb.append(inputRouteBuilder.readMeGenerator.getString()+ "\n\n");
+		context.addRoutes(inputRouteBuilder);
+		/*
+		 * sleep of 5 seconds each run, seems to be enough on my mac, may take more or
+		 * less on your box. You will be able tell because some of the source
+		 * folders will not be created, so when you try a maven build it will
+		 * fail. It especially likes to leave out src/test/resources. My guess
+		 * is that it must be garbage collecting when it does, because it will
+		 * work perfectly about 2/3 of the time with only a second
+		 */
+		context.start();
+		Thread.sleep(5000);
+		context.stop();
+		System.gc();
+	}
+}

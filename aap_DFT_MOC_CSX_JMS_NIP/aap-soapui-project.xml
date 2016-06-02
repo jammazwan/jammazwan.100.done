@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="6e81d7e0-866c-4896-b6a4-5bcc4acae95f" activeEnvironment="Default" name="aap" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="5b8d7353-dea6-41df-9608-ea729dfd8860" wsaVersion="NONE" name="AapServiceSoapBinding" type="wsdl" bindingName="{http://aap/}AapServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:9000/aap/?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:9000/aap/?wsdl"><con:part><con:url>http://localhost:9000/aap/?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="AapService" targetNamespace="http://aap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://aap/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://aap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://aap/">
+      <xs:complexType name="cleaner">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="age" type="xs:string"/>
+          <xs:element minOccurs="0" name="health" type="xs:string"/>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="OCDness" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="mop" type="mop"/>
+      <xs:complexType name="mop">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="arg0" type="cleaner"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="mopResponse" type="mopResponse"/>
+      <xs:complexType name="mopResponse">
+        <xs:sequence>
+          <xs:element form="qualified" minOccurs="0" name="return" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="mopResponse">
+    <wsdl:part element="tns:mopResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="mop">
+    <wsdl:part element="tns:mop" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AapServicePortType">
+    <wsdl:operation name="mop">
+      <wsdl:input message="tns:mop" name="mop"></wsdl:input>
+      <wsdl:output message="tns:mopResponse" name="mopResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AapServiceSoapBinding" type="tns:AapServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="mop">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="mop">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="mopResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AapService">
+    <wsdl:port binding="tns:AapServiceSoapBinding" name="AapServicePort">
+      <soap:address location="http://localhost:9000/aap/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9000/aap/</con:endpoint></con:endpoints><con:operation id="7c84d696-a259-43b9-acc0-bb57833b8895" isOneWay="false" action="" name="mop" bindingOperationName="mop" type="Request-Response" outputName="mopResponse" inputName="mop" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="567e195f-2e2d-4677-809c-44652ab3dfac" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9000/aap/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:aap="http://aap/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <aap:mop>
+         <!--Optional:-->
+         <aap:arg0>
+            <!--Optional:-->
+            <age>17</age>
+            <!--Optional:-->
+            <health>vibrant</health>
+            <!--Optional:-->
+            <name>Wilbur Smith</name>
+            <!--Optional:-->
+            <OCDness>severe</OCDness>
+         </aap:arg0>
+      </aap:mop>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://aap/AapServicePortType/mop"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

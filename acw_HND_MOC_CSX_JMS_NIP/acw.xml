@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://acw/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="AcwService" targetNamespace="http://acw/">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://acw/" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://acw/">
+  <xs:complexType name="buzzard">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="age" type="xs:string"/>
+      <xs:element minOccurs="0" name="region" type="xs:string"/>
+      <xs:element minOccurs="0" name="subspecies" type="xs:string"/>
+      <xs:element minOccurs="0" name="wingspan" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="observe" type="observe"/>
+  <xs:complexType name="observe">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="arg0" type="buzzard"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="observeResponse" type="observeResponse"/>
+  <xs:complexType name="observeResponse">
+    <xs:sequence>
+      <xs:element form="qualified" minOccurs="0" name="return" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="observe">
+    <wsdl:part element="tns:observe" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="observeResponse">
+    <wsdl:part element="tns:observeResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AcwServicePortType">
+    <wsdl:operation name="observe">
+      <wsdl:input message="tns:observe" name="observe">
+    </wsdl:input>
+      <wsdl:output message="tns:observeResponse" name="observeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AcwServiceSoapBinding" type="tns:AcwServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="observe">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="observe">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="observeResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AcwService">
+    <wsdl:port binding="tns:AcwServiceSoapBinding" name="AcwServicePort">
+      <soap:address location="http://localhost:9000/acw/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

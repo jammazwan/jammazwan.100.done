@@ -1,0 +1,7 @@
+package feed;
+
+import java.io.Serializable;
+
+public interface CountryCode  extends Serializable{
+
+}

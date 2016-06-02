@@ -1,0 +1,15 @@
+package jammazwan;
+
+import org.apache.camel.builder.RouteBuilder;
+
+import com.sun.xml.bind.v2.schemagen.xmlschema.List;
+
+public class LoaderRoutes extends RouteBuilder {
+
+	public void configure() throws Exception {
+		from("file://src/main/resources/data/?noop=true&fileName=cities.csv").unmarshal("cityDataFormat").split(body())
+				.process("cityToJpa").to("jpa:jammazwan.jpa.CityJpa");
+		;
+	}
+
+}

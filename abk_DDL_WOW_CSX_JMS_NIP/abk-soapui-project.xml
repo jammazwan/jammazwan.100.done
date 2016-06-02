@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="952c595c-0ba1-402e-a13b-5d7909eefc7c" activeEnvironment="Default" name="abk" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="a635c225-1fee-46ec-83f4-44ad8e91c1f1" wsaVersion="NONE" name="AbkServiceServiceSoapBinding" type="wsdl" bindingName="{http://abk/}AbkServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:9000/abk/?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:9000/abk/?wsdl"><con:part><con:url>http://localhost:9000/abk/?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="AbkServiceService" targetNamespace="http://abk/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://abk/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://abk/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="grows" type="tns:grows"/>
+      <xs:element name="growsResponse" type="tns:growsResponse"/>
+      <xs:complexType name="grows">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:leaf"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="leaf">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="type" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="growsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:tree"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="tree">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="desc" type="xs:string"/>
+          <xs:element minOccurs="0" name="species" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="grows">
+    <wsdl:part element="tns:grows" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="growsResponse">
+    <wsdl:part element="tns:growsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AbkService">
+    <wsdl:operation name="grows">
+      <wsdl:input message="tns:grows" name="grows"></wsdl:input>
+      <wsdl:output message="tns:growsResponse" name="growsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AbkServiceServiceSoapBinding" type="tns:AbkService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="grows">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="grows">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="growsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AbkServiceService">
+    <wsdl:port binding="tns:AbkServiceServiceSoapBinding" name="AbkServicePort">
+      <soap:address location="http://localhost:9000/abk/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9000/abk/</con:endpoint></con:endpoints><con:operation id="8617a0b9-1f1a-4943-8990-f63f82f0f16e" isOneWay="false" action="" name="grows" bindingOperationName="grows" type="Request-Response" outputName="growsResponse" inputName="grows" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fd6b342d-efb8-409a-90e5-52f6bab1171e" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9000/abk/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:abk="http://abk/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <abk:grows>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <name>elm</name>
+            <!--Optional:-->
+            <type>varigated</type>
+         </arg0>
+      </abk:grows>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://abk/AbkService/grows"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

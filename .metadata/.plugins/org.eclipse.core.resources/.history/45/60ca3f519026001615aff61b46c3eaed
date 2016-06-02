@@ -1,0 +1,11 @@
+package jammazwan;
+
+public class XyzReRun {
+
+	public static void main(String[] args) {
+		XyzReRun xyzReRun = new XyzReRun();
+		xyzReRun.go();
+
+	}
+
+}

@@ -1,0 +1,5 @@
+package jammazwan.util;
+
+public class SleepUntilSeemsIdle {
+
+}

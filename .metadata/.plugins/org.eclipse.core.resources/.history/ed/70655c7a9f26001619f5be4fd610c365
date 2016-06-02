@@ -1,0 +1,50 @@
+package jammazwan;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.apache.camel.Exchange;
+import org.apache.camel.Processor;
+import org.apache.camel.builder.RouteBuilder;
+import org.apache.camel.model.dataformat.JsonLibrary;
+import org.apache.camel.model.language.JsonPathExpression;
+
+import jammazwan.entity.XmplProject;
+
+public class UnMarshalExampleProjects extends RouteBuilder {
+	JsonPathExpression jsonPathExpression = new JsonPathExpression("$[*]");
+	List<XmplProject> exampleProjects = new ArrayList<XmplProject>();
+
+	@Override
+	public void configure() throws Exception {
+		from("file://src/main/resources?noop=true&fileName=xyzprojects.json").split(jsonPathExpression)
+				.process(new Processor() {
+					@Override
+					public void process(Exchange exchange) throws Exception {
+						XmplProject xmplProject = exchange.getIn().getBody(XmplProject.class);
+						if(xmplProject==null){
+							System.err.println("DARN");
+						}
+						exampleProjects.add(xmplProject);
+					}
+				});
+		// .unmarshal().json(JsonLibrary.Jackson, XmplProject.class).process(new
+		// Processor() {
+		// @Override
+		// public void process(Exchange exchange) throws Exception {
+		// System.err.println("WHAT IS " + exchange.getIn().getBody());
+		// // Object obj = exchange.getIn().getBody();
+		// // System.err.println("WHAT IS "+ obj.getClass());
+		// // XmplProject xmplProject =
+		// // exchange.getIn().getBody(XmplProject.class);
+		// // exampleProjects.add(xmplProject);
+		// // System.out.println("OOOOOOOOOO " + xmplProject);
+		// }
+		// });
+	}
+
+	public List<XmplProject> getExampleProjects() {
+		return exampleProjects;
+	}
+
+}

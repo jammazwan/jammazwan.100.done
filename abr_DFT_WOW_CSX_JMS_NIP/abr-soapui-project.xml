@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="184d4155-dfd9-4072-9b23-e03b2852e88d" activeEnvironment="Default" name="abr" resourceRoot="" soapui-version="5.2.1" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="1d49e26b-cb48-498c-96d4-9edb5dbc3a36" wsaVersion="NONE" name="AbrServiceServiceSoapBinding" type="wsdl" bindingName="{http://abr/}AbrServiceServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="http://localhost:9000/abr/?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:9000/abr/?wsdl"><con:part><con:url>http://localhost:9000/abr/?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="AbrServiceService" targetNamespace="http://abr/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://abr/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://abr/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="turns" type="tns:turns"/>
+      <xs:element name="turnsResponse" type="tns:turnsResponse"/>
+      <xs:complexType name="turns">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="tns:pole"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="pole">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="name" type="xs:string"/>
+          <xs:element minOccurs="0" name="type" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="turnsResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="tns:crank"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="crank">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="desc" type="xs:string"/>
+          <xs:element minOccurs="0" name="handle" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="turnsResponse">
+    <wsdl:part element="tns:turnsResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="turns">
+    <wsdl:part element="tns:turns" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="AbrService">
+    <wsdl:operation name="turns">
+      <wsdl:input message="tns:turns" name="turns"></wsdl:input>
+      <wsdl:output message="tns:turnsResponse" name="turnsResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AbrServiceServiceSoapBinding" type="tns:AbrService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="turns">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="turns">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="turnsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="AbrServiceService">
+    <wsdl:port binding="tns:AbrServiceServiceSoapBinding" name="AbrServicePort">
+      <soap:address location="http://localhost:9000/abr/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9000/abr/</con:endpoint></con:endpoints><con:operation id="0086ea54-46b3-469c-8bad-44a190e42551" isOneWay="false" action="" name="turns" bindingOperationName="turns" type="Request-Response" outputName="turnsResponse" inputName="turns" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="4ec72539-de0b-46a5-b762-620b32f196b6" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9000/abr/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:abr="http://abr/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <abr:turns>
+         <!--Optional:-->
+         <arg0>
+            <!--Optional:-->
+            <name>Zfr 3906 - plastic sheath</name>
+            <!--Optional:-->
+            <type>steel</type>
+         </arg0>
+      </abr:turns>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://abr/AbrService/turns"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/></con:soapui-project>

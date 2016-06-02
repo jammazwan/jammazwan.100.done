@@ -1,0 +1,9 @@
+package jammazwan.raw;
+
+public interface Surname {
+
+	String getName();
+
+	void setName(String name);
+
+}

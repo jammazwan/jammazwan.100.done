@@ -1,0 +1,20 @@
+package jammazwan;
+
+import java.io.Serializable;
+
+public interface CountryCategory  extends Serializable{
+
+	int getNum();
+
+	void setNum(int num);
+
+	String getCategory();
+
+	void setCategory(String category);
+
+	String getName();
+
+	void setName(String name);
+	String getTableName()
+
+}

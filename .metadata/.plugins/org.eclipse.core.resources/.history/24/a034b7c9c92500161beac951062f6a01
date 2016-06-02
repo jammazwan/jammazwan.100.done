@@ -1,0 +1,9 @@
+package ${headers.abcPrefix};
+
+public class -${headers.abcPrefix}Bean {
+
+    public String answer(String text) {
+        return "My " + text;
+    }
+
+}

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>example</groupId>
+	<artifactId>ead_HND_WOW_CSX_DIR_NIP</artifactId>
+	<packaging>jar</packaging>
+	<version>1.0-SNAPSHOT</version>
+
+	<name>ead_HND_WOW_CSX_DIR_NIP</name>
+	<url>http://www.example.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<camel-version>2.17.1</camel-version>
+		<slf4j-version>1.7.13</slf4j-version>
+		<log4j-version>1.2.17</log4j-version>
+		<activemq-version>5.13.2</activemq-version>
+		<xbean-spring-version>4.5</xbean-spring-version>
+		<spring-context-version>4.2.5</spring-context-version>
+	</properties>
+
+	<dependencies>
+			<dependency>
+				<groupId>jammazwan</groupId>
+				<artifactId>feed</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+			</dependency>
+	</dependencies>
+
+
+</project>

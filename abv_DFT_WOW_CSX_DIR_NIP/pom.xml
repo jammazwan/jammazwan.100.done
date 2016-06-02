@@ -1,0 +1,91 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>jammazwan</groupId>
+	<artifactId>abv</artifactId>
+	<version>0.1.0</version>
+
+	<name>ABV</name>
+	<properties>
+		<cxf-version>3.0.6</cxf-version>
+		<activemq-version>5.13.2</activemq-version>
+		<spring-version>4.2.5</spring-version>
+		<junit-version>4.11</junit-version>
+		<xbean-version>4.5</xbean-version>
+		<slf4j-version>1.7.13</slf4j-version>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<hsqldb-version>1.8.0.10</hsqldb-version>
+		<hawtio-version>1.4.63</hawtio-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<log4j-version>1.2.17</log4j-version>
+		<camel-version>2.17.0</camel-version>
+		<scala-plugin-version>3.1.6</scala-plugin-version>
+		<jetty-plugin-version>8.1.16.v20140903</jetty-plugin-version>
+		<bundle-plugin-version>2.3.7</bundle-plugin-version>
+		<scala-version>2.11.5</scala-version>
+	</properties>
+	<dependencies>
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-core</artifactId>
+			<version>${camel-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>com.fasterxml.jackson.dataformat</groupId>
+			<artifactId>jackson-dataformat-xml</artifactId>
+			<version>2.6.3</version>
+		</dependency>
+
+
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-cxf</artifactId>
+			<version>${camel-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j-version}</version>
+		</dependency>
+
+		<!-- cxf using slf4j -->
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>${slf4j-version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>${slf4j-version}</version>
+		</dependency>
+
+		<!-- using Jetty with CXF -->
+		<dependency>
+			<groupId>org.apache.cxf</groupId>
+			<artifactId>cxf-rt-transports-http-jetty</artifactId>
+			<version>${cxf-version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.camel</groupId>
+			<artifactId>camel-test-spring</artifactId>
+			<version>${camel-version}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit-version}</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+</project>
+
