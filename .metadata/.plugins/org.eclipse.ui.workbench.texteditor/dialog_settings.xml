@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="${headers.pckg}" key="selection"/>
+		<item value="unmarshal object(s) into XML format" key="selection"/>
 		<item value="false" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="unmarshal object(s) into XML format"/>
+			<item value="xml"/>
 			<item value="${headers.abcPrefix}"/>
 			<item value="&quot;src/main/java/&quot;"/>
 			<item value="&quot;src/test/java/&quot;"/>
 			<item value="/example/"/>
 			<item value="example"/>
 			<item value="&lt;version&gt;2.17.0&lt;/version&gt;"/>
-			<item value="People and Society"/>
-			<item value="ategory"/>
 		</list>
 		<list key="replacehistory">
 			<item value="${headers.pckg}"/>

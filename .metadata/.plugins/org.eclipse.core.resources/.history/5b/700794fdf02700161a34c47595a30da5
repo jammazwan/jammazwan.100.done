@@ -1,9 +1,0 @@
-package jammazwan.faa;
-
-public class FaaBean {
-
-    public String answer(String text) {
-        return "My " + text;
-    }
-
-}

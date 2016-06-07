@@ -1,7 +1,0 @@
-package feed.raw;
-
-public class RankValue {
-	private int rank;
-	private String name;
-	private String value;
-}

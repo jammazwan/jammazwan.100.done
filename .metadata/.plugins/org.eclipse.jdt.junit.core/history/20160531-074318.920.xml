@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="XaaTest (1)" project="xaa_ObjectToJsonFile" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="jammazwan.xaa.XaaTest" time="1.295">
-    <testcase name="testHelloBean" classname="jammazwan.xaa.XaaTest" time="1.295"/>
-  </testsuite>
-</testrun>

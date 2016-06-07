@@ -1,7 +1,0 @@
-package jammazwan.raw;
-
-public class CompanyPojo {
-	private int rank;
-	private String companyName;
-	private int contacts;
-}

@@ -83,22 +83,7 @@
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/acq_DDL_MOC_TPL_JMS_NIP" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/abe_DDL_NTG_DIR_EIP" type="4"/>
 </workingSet>
-<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1461465765290_5" label="reference" name="reference">
-<item elementID="=caa" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/cia_contract_first" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/aai_contract_first" type="4"/>
-</workingSet>
-<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1461465812488_6" label="active" name="active">
-<item elementID="=camel_file_safari" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/prototypejammzdetail" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/eadjpa" type="4"/>
-<item elementID="=jammazwan.maker" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=jammazwan.shared" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=jsonexperiment" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/safari_test_entities" type="4"/>
-<item elementID="=xab_SomethingElse" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=xab_SeedDbFromManyCsvFiles" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-</workingSet>
+<workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1461465812488_6" label="active" name="active"/>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1461799694243_5" label="setaside" name="setaside">
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/acg_DDL_NTG_CSX_JMS_NIP" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/aaa_DDL_NTG_CSX_DIR_NIP" type="4"/>
@@ -111,6 +96,7 @@
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/aas_HND_NTG_CSX_DIR_NIP" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/ade_HND_WOW_CSX_DIR_NIP" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/aaw_DDL_NTG_CSX_JMS_NIP" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/aai_contract_first" type="4"/>
 </workingSet>
 <workingSet editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1462056174808_8" label="stillMoreToFix" name="stillMoreToFix">
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/abo_DDL_MOC_FIL_DIR_NIP" type="4"/>
@@ -119,7 +105,7 @@
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/acd_HND_MOC_FIL_JMS_NIP" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/abv_DFT_WOW_CSX_DIR_NIP" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/adt_DDL_WOW_FIL_JMS_NIP" type="4"/>
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/aat_DFT_NTG_CSX_DIR_NIP" type="4"/>
+<item elementID="=aat_DFT_NTG_CSX_DIR_NIP" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1461020087230_0" label="Window Working Set" name="Aggregate for window 1461020087230"/>
 <mruList name="active"/>

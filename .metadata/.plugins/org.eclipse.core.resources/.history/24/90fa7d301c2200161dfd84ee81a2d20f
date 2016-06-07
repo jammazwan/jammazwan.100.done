@@ -1,5 +1,0 @@
-package feed.raw;
-
-public interface CountryCode {
-
-}

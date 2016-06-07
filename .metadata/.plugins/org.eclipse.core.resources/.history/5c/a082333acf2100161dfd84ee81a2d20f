@@ -1,8 +1,0 @@
-package feed.raw;
-
-public class Name {
-	private int rank;
-	private String male;
-	private String female;
-	
-}

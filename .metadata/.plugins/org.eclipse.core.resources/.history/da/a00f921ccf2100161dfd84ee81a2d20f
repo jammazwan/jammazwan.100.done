@@ -1,7 +1,0 @@
-package feed.raw;
-
-public class CountryCategory {
-	private int num;
-	private String category;
-	private String name;
-}

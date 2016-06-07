@@ -1,7 +1,0 @@
-package feed;
-
-public class CountryCategory {
-	private String num;
-	private String category;
-	private String name;
-}

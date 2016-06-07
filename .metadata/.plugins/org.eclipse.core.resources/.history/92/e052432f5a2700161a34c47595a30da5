@@ -1,5 +1,0 @@
-package jammazwan.replace;
-
-public class ReplacePomDependencies implements Replacement{
-
-}

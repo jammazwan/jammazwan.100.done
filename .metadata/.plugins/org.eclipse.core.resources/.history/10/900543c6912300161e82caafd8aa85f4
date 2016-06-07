@@ -1,7 +1,0 @@
-package jammazwan;
-
-import java.io.Serializable;
-
-public interface CountryCode  extends Serializable{
-
-}

@@ -1,6 +1,0 @@
-package eae;
-
-public class Frog {
-	private String leg;
-
-}

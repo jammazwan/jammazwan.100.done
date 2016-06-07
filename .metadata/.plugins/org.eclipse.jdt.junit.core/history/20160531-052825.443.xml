@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?><testrun name="FaaTest (7)" project="faa_DFT_NTG_FIL_JMS_EIP" tests="1" started="1" failures="0" errors="0" ignored="0">
-  <testsuite name="jammazwan.faa.FaaTest" time="1.306">
-    <testcase name="testHelloBean" classname="jammazwan.faa.FaaTest" time="1.306"/>
-  </testsuite>
-</testrun>

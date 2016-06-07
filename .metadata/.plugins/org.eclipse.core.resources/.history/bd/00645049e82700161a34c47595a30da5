@@ -1,6 +1,0 @@
-Welcome to ${headers.projectName}
-
-Relax! This project runs almost all by itself, no huge web of parent poms to obfuscate what is going on under the covers.
-
-But it does have one dependency, so you always have to git clone it into the same folder first, 
-then run mvn install on that first, before messing with this project.

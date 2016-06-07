@@ -1,7 +1,0 @@
-package jammazwan;
-
-import org.apache.camel.builder.RouteBuilder;
-
-public class SomeThingRoutes extends RouteBuilder{
-
-}

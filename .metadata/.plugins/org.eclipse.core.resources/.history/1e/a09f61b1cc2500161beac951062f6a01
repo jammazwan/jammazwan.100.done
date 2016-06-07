@@ -1,9 +1,0 @@
-package jammazwan.${headers.abcPrefix};
-
-public class ${headers.FileNamePrefix}Bean {
-
-    public String answer(String text) {
-        return "My " + text;
-    }
-
-}

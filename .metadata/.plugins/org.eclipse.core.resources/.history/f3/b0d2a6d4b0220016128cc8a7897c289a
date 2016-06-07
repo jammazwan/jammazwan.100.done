@@ -1,8 +1,0 @@
-package jammazwan.load;
-
-import java.util.List;
-
-public class LoadFromFile {
-	public List<?>  load(@Exchange exchange)
-
-}

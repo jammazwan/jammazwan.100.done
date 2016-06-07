@@ -1,7 +1,0 @@
-package jammazwan.jive;
-
-import org.apache.camel.Processor;
-
-public class CityToJPA implements Processor{
-
-}

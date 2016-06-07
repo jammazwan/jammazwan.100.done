@@ -1,6 +1,0 @@
-package jammazwan.replace;
-
-public interface Replacement {
-	public String get(Map<String, String> replacements);
-
-}
