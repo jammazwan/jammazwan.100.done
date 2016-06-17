@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename local variable &apos;mockEndpoint&apos; in &apos;aap.AapTest.testOrderOk()&apos; to &apos;countEndpoint&apos;&#x0A;- Original project: &apos;aap_DFT_MOC_CSX_JMS_NIP&apos;&#x0A;- Original element: &apos;aap.AapTest.testOrderOk().mockEndpoint&apos;&#x0A;- Renamed element: &apos;mockEndpoint&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;mockEndpoint&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src\/test\/java&lt;aap{AapTest.java[AapTest~testOrderOk@mockEndpoint!631!688!644!655!QMockEndpoint;!0!false" name="countEndpoint" references="true" stamp="1463450520595" version="1.0"/>
-</session>

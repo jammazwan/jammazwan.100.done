@@ -1,7 +1,0 @@
-package myorg;
-
-import org.apache.camel.test.junit4.CamelTestSupport;
-
-public class RoutingSlipWithProcessTest  extends CamelTestSupport {
-
-}

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;AalRoutes.java&apos; to &apos;caa/src/main/java/caa&apos;&#x0A;- Original project: &apos;aal_HND_MOC_FIL_DIR_NIP&apos;&#x0A;- Destination element: &apos;caa/src/main/java/caa&apos;&#x0A;- Original element: &apos;aal.AalRoutes.java&apos;" description="Copy compilation unit" destination="=caa/src\/main\/java&lt;caa" element1="/src\/main\/java&lt;aal{AalRoutes.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1462586243430" units="1" version="1.0"/>
-</session>

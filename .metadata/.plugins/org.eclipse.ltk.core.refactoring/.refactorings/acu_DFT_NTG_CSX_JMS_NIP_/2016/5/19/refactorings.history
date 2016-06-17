@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Copy element &apos;README.txt&apos; to &apos;acu_DFT_NTG_CSX_JMS_NIP&apos;&#x0A;- Original project: &apos;acu_DFT_NTG_CSX_JMS_NIP_&apos;&#x0A;- Destination element: &apos;acu_DFT_NTG_CSX_JMS_NIP&apos;&#x0A;- Original element: &apos;README.txt&apos;" description="Copy file" destination="=acu_DFT_NTG_CSX_JMS_NIP" element1="README.txt" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1462649131019" units="0" version="1.0"/>
-</session>

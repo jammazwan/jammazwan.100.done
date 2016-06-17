@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename type &apos;jamz.random.RandomIntGenerator_&apos; to &apos;RandomInt&apos;&#x0A;- Original project: &apos;safari_test_entities&apos;&#x0A;- Original element: &apos;jamz.random.RandomIntGenerator_&apos;&#x0A;- Renamed element: &apos;jamz.random.RandomInt&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;RandomIntGenerator_&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;jamz.random{RandomIntGenerator_.java[RandomIntGenerator_" matchStrategy="1" name="RandomInt" qualified="false" references="true" similarDeclarations="false" stamp="1464106904828" textual="false" version="1.0"/>
-</session>

@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename resource &apos;aai_HND_MOC_CSX_DIR_EIP/src/main/resources/META-INF/spring/camel-route.xml&apos; to &apos;camel-context.xml&apos;" description="Rename resource &apos;camel-route.xml&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/main/resources/META-INF/spring/camel-route.xml" name="camel-context.xml" stamp="1463444408317" updateReferences="true"/>
-</session>
